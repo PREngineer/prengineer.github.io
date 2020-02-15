@@ -2,23 +2,23 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="js/bootstrap.min.js"></script>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="js/bootstrap.min.js"></script>
 
-    <title>Jorge Pabon - Software Engineer & Cloud Professional - Projects</title>
-  </head>
+  <title>Jorge Pabon - Software Engineer & Cloud Professional - Projects</title>
+</head>
 
-  <body>
+  <body onload="setupFilters()">
 
     <!-- Name Jumbotron -->
     <div class="container" >
@@ -63,26 +63,378 @@
     <!-- Content -->
     <div class="container">
 
-      <!-- Card 1 -->
+      <!-- Filter -->
       <div class="card">
         <div class="row no-gutters">
-          <!-- Picture -->
-          <div class="col-md-4">
-            
-          </div>          
-          <!-- Welcome -->
-          <div class="col-md-5">
-            
+          <!-- Col 1 -->
+          <div class="col">
+            <form class="form-inline">
+              &nbsp;&nbsp;
+              <label class="my-1 mr-2">Project Type</label>
+              <select id="type" class="custom-select my-1 mr-sm-2" onchange="showTechs( this.value )">
+                <option selected>Choose...</option>
+                <option value="Networking">Networking</option>
+                <option value="Programming">Programming</option>
+              </select>
+              <label id="langlabel" class="my-1 mr-2">Language</label>
+              <select id="lang" class="custom-select my-1 mr-sm-2" onchange="filterLanguage( this.value )">
+                <option selected>Choose...</option>
+                <option value="Bash">Bash</option>
+                <option value="C">C</option>
+                <option value="C++">C++</option>
+                <option value="C#">C#</option>
+                <option value="HTML">HTML</option>
+                <option value="Java">Java</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="PowerShell">PowerShell</option>
+                <option value="PHP">PHP</option>
+              </select>
+            </form>
           </div>
-          <!-- Contact -->
-          <div class="col-md-3">
-            
+        </div>
+      </div>
+      
+      <!-- Language Logo -->
+      <div id="topLogoDiv" class="card">
+        <div class="text-center">
+          <img class="rounded" id="topLogo" src="images/all.png" width="150" height="150">
+        </div>
+      </div>
+      
+      <!-- Header -->
+      <div class="card">
+        <div class="row no-gutters">
+          <!-- Col 1 -->
+          <div class="col-md-2 text-center">
+            <b>Technology</b>
+          </div>          
+          <!-- Col 2 -->
+          <div class="col-md-2 text-center">
+            <b>Project Name</b>
+          </div>
+          <!-- Col 3 -->
+          <div class="col-md-8 text-center">
+          <b>About</b>
+          </div>
+          <hr>
+        </div>
+      </div>
+
+      <!-- Card -->
+      <div class="card hideable" data-tech="Programming" data-lang="JavaScript,HTML,Bootstrap">
+        <br>
+        <div class="row no-gutters">
+          <br>
+          <!-- Col 1 -->
+          <div class="col-md-2 text-center">
+            <img src="images/js.png" width="100" height="100">
+          </div>          
+          <!-- Col 2 -->
+          <div class="col-md-3 text-center">
+            This Website<br>[2020]
+          </div>
+          <!-- Col 3 -->
+          <div class="col-md-7">
+            <p>
+              <b>Curriculum Vitae</b> is a responsive website that contains my information.<br><br>
+              The implementation relies on HTML, JavaScript, and the Bootstrap 4.4 framework.<br><br>
+              JavaScript is used for the filter logic and to populate the dropdowns based on the existing data in the page.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Card -->
+      <div class="card hideable" data-tech="Programming,Databases" data-lang="PHP,JavaScript,HTML,Bootstrap">
+        <br>
+        <div class="row no-gutters">
+          <br>
+          <!-- Col 1 -->
+          <div class="col-md-2 text-center">
+            <img src="images/php7.png" width="100" height="100">
+          </div>          
+          <!-- Col 2 -->
+          <div class="col-md-3 text-center">
+            Event Manager<br>[2019]
+          </div>
+          <!-- Col 3 -->
+          <div class="col-md-7">
+            <p>
+              <b>Event Manager</b> is a Progressive Web Application developed for <a href="https://accenture.com">Accenture</a>, a Fortune 500 company.<br><br>
+              It serves as an event management platform, an organization membership management tool, and analytics engine among its features.<br><br>
+              The implementation relies on HTML, CSS, JavaScript, PHP 7, SQL, and the Bootstrap 3.7 framework.<br><br>
+              You can try a preview of the application live <a href="http://webjmps.byethost16.com/eventmanager">here</a>.<br><br>
+              Use the following credentials to experiment all the features:<br><br>
+              <b>Global Administrator:</b> administrator/password<br>
+              <b>Org Administrator:</b> admin/password<br>
+              <b>Point of Contact:</b> poc/password<br>
+              <b>Approver:</b> approver/password
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card -->
+      <div class="card hideable" data-tech="Programming,Databases" data-lang="C#,PowerShell">
+        <br>
+        <div class="row no-gutters">
+          <!-- Col 1 -->
+          <div class="col-md-2 text-center">
+            <img src="images/cs.png" width="100" height="100">
+          </div>          
+          <!-- Col 2 -->
+          <div class="col-md-3 text-center">
+            Phone Management System<br>
+            [2018]
+          </div>
+          <!-- Col 3 -->
+          <div class="col-md-7">
+            <p>
+              <b>Phone Management System</b> is a Windows Presentation Foundation Application.<br><br>
+              It serves as an interface between Databases, Microsoft Identity Manager, and Azure services.<br><br>
+              The implementation relies on C# and PowerShell.<br><br>
+              <a href="images/WPFApp02/01.png"><img src="images/WPFApp02/01.png" width="50" height="50"></a>
+              <a href="images/WPFApp02/02.png"><img src="images/WPFApp02/02.png" width="50" height="50"></a>
+              <a href="images/WPFApp02/03.png"><img src="images/WPFApp02/03.png" width="50" height="50"></a>
+              <a href="images/WPFApp02/04.png"><img src="images/WPFApp02/04.png" width="50" height="50"></a>
+              <a href="images/WPFApp02/05.png"><img src="images/WPFApp02/05.png" width="50" height="50"></a>
+              <a href="images/WPFApp02/06.png"><img src="images/WPFApp02/06.png" width="50" height="50"></a>
+              <a href="images/WPFApp02/07.png"><img src="images/WPFApp02/07.png" width="50" height="50"></a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card -->
+      <div class="card hideable" data-tech="Programming" data-lang="C#">
+        <br>
+        <div class="row no-gutters">
+          <!-- Col 1 -->
+          <div class="col-md-2 text-center">
+            <img src="images/cs.png" width="100" height="100">
+          </div>          
+          <!-- Col 2 -->
+          <div class="col-md-3 text-center">
+            Identity Management System<br>
+            [2017]
+          </div>
+          <!-- Col 3 -->
+          <div class="col-md-7">
+            <p>
+              <b>Identity Management System</b> is a Windows Presentation Foundation Application.<br><br>
+              It serves as an interface between Active Directory, Microsoft Identity Manager, and Azure services.<br><br>
+              The implementation relies on C# and PowerShell.<br><br>
+              <a href="images/WPFApp01/01.png"><img src="images/WPFApp01/01.png" width="50" height="50"></a>
+              <a href="images/WPFApp01/02.png"><img src="images/WPFApp01/02.png" width="50" height="50"></a>
+              <a href="images/WPFApp01/03.png"><img src="images/WPFApp01/03.png" width="50" height="50"></a>
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Card -->
+      <div class="card hideable" data-tech="Programming" data-lang="PHP,JavaScript,HTML,Bootstrap">
+        <br>
+        <div class="row no-gutters">
+          <!-- Col 1 -->
+          <div class="col-md-2 text-center">
+            <img src="images/php5.png" width="100" height="100">
+          </div>          
+          <!-- Col 2 -->
+          <div class="col-md-3 text-center">
+            Donations Desk<br>
+            [2014]
+          </div>
+          <!-- Col 3 -->
+          <div class="col-md-7">
+            <p>
+              <b>Donations Desk</b> is a Web & Mobile Application for <a href="https://afc.pr">Asesores Financieros Comunitarios</a>, a non-for profit organization.<br><br>
+              It serves as a crowd funding platform for participant not-for-profit organizations to get donations via PayPal and promotes them to the general public in Puerto Rico.<br><br>
+              The implementation relies on HTML, CSS, JavaScript, PHP 5, MySQL, and the Bootstrap 3.7 framework.<br><br>
+              You can try a preview of the application live <a href="http://webjmps.byethost16.com/donationsdesk/">here</a>.<br><br>
+              Use the following credentials to experiment all the features:<br><br>
+              <b>Administrator:</b> admin/password<br>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card -->
+      <div class="card hideable" data-tech="Programming,Game Design" data-lang="C#">
+        <br>
+        <div class="row no-gutters">
+          <!-- Col 1 -->
+          <div class="col-md-2 text-center">
+            <img src="images/cs.png" width="100" height="100">
+          </div>          
+          <!-- Col 2 -->
+          <div class="col-md-3 text-center">
+            Marvin's Space Exploration<br>
+            [2014]
+          </div>
+          <!-- Col 3 -->
+          <div class="col-md-7">
+            <p>
+              <b>Marvin's Space Exploration</b> is a platformer PC game developed using the Unity 3D engine.<br><br>
+              The implementation relies on C#.<br><br>
+              <a href="images/Game01/01.png"><img src="images/Game01/01.png" width="50" height="50"></a>
+              <a href="images/Game01/02.png"><img src="images/Game01/02.png" width="50" height="50"></a>
+              <a href="images/Game01/03.png"><img src="images/Game01/03.png" width="50" height="50"></a>
+              <a href="images/Game01/04.png"><img src="images/Game01/04.png" width="50" height="50"></a>
+              <a href="images/Game01/05.png"><img src="images/Game01/05.png" width="50" height="50"></a>
+              <a href="images/Game01/06.png"><img src="images/Game01/06.png" width="50" height="50"></a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card -->
+      <div class="card hideable" data-tech="Programming" data-lang="C++">
+        <br>
+        <div class="row no-gutters">
+          <!-- Col 1 -->
+          <div class="col-md-2 text-center">
+            <img src="images/c++.png" width="100" height="100">
+          </div>          
+          <!-- Col 2 -->
+          <div class="col-md-3 text-center">
+            Restaurant System<br>
+            [2013]
+          </div>
+          <!-- Col 3 -->
+          <div class="col-md-7">
+            <p>
+              <b>Restaurant System</b> is a restaurant management platform in CLI format.<br><br>
+              It allows you to process orders and manage the menu.<br><br>
+              The implementation relies on C++.<br><br>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card -->
+      <div class="card hideable" data-tech="Programming" data-lang="C++">
+        <br>
+        <div class="row no-gutters">
+          <!-- Col 1 -->
+          <div class="col-md-2 text-center">
+            <img src="images/c++.png" width="100" height="100">
+          </div>          
+          <!-- Col 2 -->
+          <div class="col-md-3 text-center">
+            Soda Machine Emulator<br>
+            [2013]
+          </div>
+          <!-- Col 3 -->
+          <div class="col-md-7">
+            <p>
+              <b>Soda Machine Emulator</b> is a CLI simulation of the system that controls a soda machine's mechanism.<br><br>
+              It allows you to process orders and manage the inventory.<br><br>
+              The implementation relies on C++.<br><br>
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Card -->
+      <div class="card hideable" data-tech="Networking,Virtualization">
+        <br>
+        <div class="row no-gutters">
+          <!-- Col 1 -->
+          <div class="col-md-2 text-center">
+            <img src="images/virtualization.png" alt="PHP 5" width="100" height="100">
+          </div>          
+          <!-- Col 2 -->
+          <div class="col-md-3 text-center">
+            Forensic Lab<br>
+            [2013]
+          </div>
+          <!-- Col 3 -->
+          <div class="col-md-7">
+            <p>
+              During my second year at the Polytechnic University of Puerto Rico, I put together a forensic laboratory for the upcoming Computer Forensics class.<br><br>
+              This laboratory had 8 Workstations and 2 hypervisor hosts that would virtualize the machines.<br><br>
+              The implementation relies on VMWare ESXi.<br><br>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card -->
+      <div class="card hideable" data-tech="Programming" data-lang="Java">
+        <br>
+        <div class="row no-gutters">
+          <!-- Col 1 -->
+          <div class="col-md-2 text-center">
+            <img src="images/java.png" width="100" height="100">
+          </div>          
+          <!-- Col 2 -->
+          <div class="col-md-3 text-center">
+            Car Rental Management System<br>
+            [2011]
+          </div>
+          <!-- Col 3 -->
+          <div class="col-md-7">
+            <p>
+              <b>Car Rental Management System</b> is a car rental command line program to manage clients, inventory, and rental leases.<br><br>
+              The implementation relies on Java.<br><br>
+              <a href="images/carRental.gif"><img src="images/carRental.gif" width="50" height="50"></a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card -->
+      <div class="card hideable" data-tech="Programming" data-lang="Java">
+        <br>
+        <div class="row no-gutters">
+          <!-- Col 1 -->
+          <div class="col-md-2 text-center">
+            <img src="images/java.png" width="100" height="100">
+          </div>          
+          <!-- Col 2 -->
+          <div class="col-md-3 text-center">
+            Stock Exchange Simulator<br>
+            [2011]
+          </div>
+          <!-- Col 3 -->
+          <div class="col-md-7">
+            <p>
+              <b>Stock Exchange Simulator</b> is a CLI simulator.<br><br>
+              It allows you to add stocks, buy, sell, and manage an investor's profile.<br><br>
+              The implementation relies on Java.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card -->
+      <div class="card hideable" data-tech="Programming,Game Design" data-lang="Java">
+        <br>
+        <div class="row no-gutters">
+          <!-- Col 1 -->
+          <div class="col-md-2 text-center">
+            <img src="images/java.png" width="100" height="100">
+          </div>          
+          <!-- Col 2 -->
+          <div class="col-md-3 text-center">
+            Void Space Game<br>
+            [2011]
+          </div>
+          <!-- Col 3 -->
+          <div class="col-md-7">
+            <p>
+              <b>Void Space</b> is a PC Arcade-style Game.<br><br>
+              The implementation relies on Java.
+            </p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/T85nKIHn2fo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
         </div>
       </div>
 
     </div>
 
+    <!-- Footer -->
     <div class="container">
       <hr>
       <p class="text-center">
@@ -93,3 +445,270 @@
   </body>
 
 </html>
+
+<!-- Scripts to handle dropdown filters -->
+<script type="text/javascript">
+  
+  // Grab the first drop down
+  var type      = document.getElementById("type");
+  // Grab the second drop down
+  var lang      = document.getElementById("lang");
+  var langlabel = document.getElementById("langlabel");
+  // Grab all the cards to handle them easier
+  var cards     = $('div.hideable');
+  
+  // Grab all unique techs
+  var techs = [];
+  var j = 0;
+  // Loop over all retrieved values
+  $('div.hideable[data-tech]').each(
+    function(i, obj)
+    {
+      // Explode into array
+      var temp = $(obj).attr('data-tech').split(',');
+      // If it doesn't exist, add it
+      temp.forEach(element => {
+        if( techs.indexOf( element ) == -1  )
+        {
+          techs[j] = element;
+          j++;
+        }
+      });
+    }
+  )
+
+  // Grab all unique languages
+  var langs = [];
+  var j = 0;
+  // Loop over all retrieved values
+  $('div.hideable[data-lang]').each(
+    function(i, obj)
+    {
+      // Explode into array
+      var temp = $(obj).attr('data-lang').split(',');
+      // If it doesn't exist, add it
+      temp.forEach(element => {
+        if( langs.indexOf( element ) == -1  )
+        {
+          langs[j] = element;
+          j++;
+        }
+      });
+    }
+  )
+  
+  // Shows the second dropdown if Programming is chosen
+  function showTechs( value )
+  {
+    changeTopLogoImage( value );
+
+    if( value == 'Programming' )
+    {
+      lang.style.display = "block";
+      langlabel.style.display = "block";
+    }
+    else
+    {
+      lang.style.display = "none";
+      langlabel.style.display = "none";
+    }
+
+    // Display all cards if nothing chosen.
+    if( value == '-All-' )
+    {
+      cards.each(
+        function(i, obj)
+        {
+          // Show them all
+          obj.style.display = "block";
+        }
+      )
+    }
+    // Display the ones that match
+    else
+    {
+      cards.each(
+        function(i, obj)
+        {
+          // Explode into array
+          var temp = $(obj).attr('data-tech').split(',');
+          // If it exists, show it
+          temp.forEach(element => {
+            if( temp.indexOf( value ) == -1  )
+            {
+              obj.style.display = "none";
+            }
+            else
+            {
+              obj.style.display = "block";
+            }
+          });
+        }
+      )
+    }
+  }
+
+  // Selects only the programming language cards that match
+  function filterLanguage( value )
+  {
+    changeTopLogoImage( value );
+
+    // Display all cards if nothing chosen.
+    if( value == '-All Programming-' )
+    {
+      showTechs( 'Programming' );
+    }
+    // Display the ones that match
+    else
+    {
+      cards.each(
+        function(i, obj)
+        {
+          // If it exists
+          if( $(obj).attr('data-lang') != null )
+          {
+            // Explode into array
+            var temp = $(obj).attr('data-lang').split(',');
+            // If it exists, show it
+            temp.forEach(element => {
+              if( temp.indexOf( value ) == -1  )
+              {
+                obj.style.display = "none";
+              }
+              else
+              {
+                obj.style.display = "block";
+              }
+            });
+          }
+        }
+      )
+    }
+  }
+
+  // Changes the Top Logo
+  function changeTopLogoImage( value )
+  {
+    image = document.getElementById('topLogo');
+    
+    switch( value )
+    {
+      case '-All Programming-':
+        image.src = 'images/allprogramming.png';
+        break;
+      case 'Programming':
+        image.src = 'images/allprogramming.png';
+        break;
+      case 'Databases':
+        image.src = 'images/sql.png';
+        break;
+      case 'Game Design':
+        image.src = 'images/controller.png';
+        break;
+      case 'Networking':
+        image.src = 'images/network.png';
+        break;
+      case 'Virtualization':
+        image.src = 'images/vmware.png';
+        break;
+      case 'Bootstrap':
+        image.src = 'images/bootstrap.png';
+        break;
+      case 'C#':
+        image.src = 'images/cs.png';
+        break;
+      case 'C++':
+        image.src = 'images/c++.png';
+        break;
+      case 'HTML':
+        image.src = 'images/html.png';
+        break;
+      case 'Java':
+        image.src = 'images/java.png';
+        break;
+      case 'JavaScript':
+        image.src = 'images/js.png';
+        break;
+      case 'PHP':
+        image.src = 'images/php.png';
+        break;
+      case 'PowerShell':
+        image.src = 'images/powershell.png';
+        break;
+      case 'Bash':
+        image.src = 'images/bash.png';
+        break;
+      default:
+      image.src = 'images/all.png';
+    }
+  }
+
+  // Starts the setup of the dropdowns
+  function setupFilters()
+  {
+    setupLanguages();
+    setupTechnologies();
+    lang.style.display = "none";
+    langlabel.style.display = "none";
+  }
+
+  // Sets the proper values of the second dropdown based on the data that exists
+  function setupLanguages()
+  {
+    // Remove all previous options
+    while(lang.firstChild)
+    {
+      lang.removeChild(lang.firstChild);
+    }
+    if(lang.selectedIndex == 0)
+    {
+      return;
+    }
+
+    // Firstly, put the empty option on top
+    var o = document.createElement("option");
+    o.value = '-All Programming-';
+    o.text = '-All Programming-';
+    lang.appendChild(o);
+    
+    langs.sort();
+    // Secondly, find the ID of the selected Event Target
+    for(var i = 0; i < langs.length; i++)
+    {
+      o       = document.createElement("option");
+      o.value = langs[i];
+      o.text  = langs[i];
+      lang.appendChild(o);
+    }
+  }
+
+  // Sets the proper values of the first dropdown based on the data that exists
+  function setupTechnologies()
+  {
+    // Remove all previous options
+    while(type.firstChild)
+    {
+      type.removeChild(type.firstChild);
+    }
+    if(type.selectedIndex == 0)
+    {
+      return;
+    }
+
+    // Firstly, put the empty option on top
+    var o = document.createElement("option");
+    o.value = '-All-';
+    o.text = '-All-';
+    type.appendChild(o);
+    
+    techs.sort();
+    // Secondly, find the ID of the selected Event Target
+    for(var i = 0; i < techs.length; i++)
+    {
+      o       = document.createElement("option");
+      o.value = techs[i];
+      o.text  = techs[i];
+      type.appendChild(o);
+    }
+  }
+</script>
