@@ -15,7 +15,7 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="js/bootstrap.min.js"></script>
 
-  <title>Jorge Pabon - Software Engineer & Cloud Professional - Projects</title>
+  <title>Jorge Pabon - Sr. Software Engineer | Sr. DevOps Engineer | Cloud Professional - Projects</title>
 </head>
 
   <body onload="setupFilters()">
@@ -23,7 +23,7 @@
     <!-- Name Jumbotron -->
     <div class="container" >
       <h1 class="display-4">Jorge Pabón</h1>
-      <span class="lead">Software Engineer & Cloud Professional</span>
+      <span class="lead">Sr. Software Engineer | Sr. DevOps Engineer | Cloud Professional</span>
       <hr>
     </div>
 
@@ -49,6 +49,7 @@
               <a class="nav-link" href="projects.html">Projects <span class="sr-only">(current)</span></a>
             </li>
           </ul>
+          <small class="navbar-text">Latest update: Aug 5, 2023</small>
           <a class="nav-link text-muted" href="" onclick="window.print();return false;">
             <svg class="bi bi-download" width="2em" height="2em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" d="M2.5 10a.5.5 0 01.5.5V14a1 1 0 001 1h12a1 1 0 001-1v-3.5a.5.5 0 011 0V14a2 2 0 01-2 2H4a2 2 0 01-2-2v-3.5a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
@@ -73,21 +74,13 @@
               <label class="my-1 mr-2">Project Type</label>
               <select id="type" class="custom-select my-1 mr-sm-2" onchange="showTechs( this.value )">
                 <option selected>Choose...</option>
-                <option value="Networking">Networking</option>
-                <option value="Programming">Programming</option>
+                <!-- Options are auto-populated from the values in the cards -->
               </select>
+
               <label id="langlabel" class="my-1 mr-2">Language</label>
               <select id="lang" class="custom-select my-1 mr-sm-2" onchange="filterLanguage( this.value )">
                 <option selected>Choose...</option>
-                <option value="Bash">Bash</option>
-                <option value="C">C</option>
-                <option value="C++">C++</option>
-                <option value="C#">C#</option>
-                <option value="HTML">HTML</option>
-                <option value="Java">Java</option>
-                <option value="JavaScript">JavaScript</option>
-                <option value="PowerShell">PowerShell</option>
-                <option value="PHP">PHP</option>
+                <!-- Options are auto-populated from the values in the cards -->
               </select>
             </form>
           </div>
@@ -120,8 +113,85 @@
         </div>
       </div>
 
-      <!-- Card -->
-      <div class="card hideable" data-tech="Programming" data-lang="JavaScript,HTML,Bootstrap">
+      <!-- RPi-Streambox Card -->
+      <div class="card hideable" data-tech="Software Engineering" data-lang="Bash">
+        <br>
+        <div class="row no-gutters">
+          <!-- Col 1 -->
+          <div class="col-md-2 text-center">
+            <img src="images/bash.png" width="100" height="100">
+          </div>          
+          <!-- Col 2 -->
+          <div class="col-md-3 text-center">
+            RPi-Streambox Server<br>
+            [2023]
+          </div>
+          <!-- Col 3 -->
+          <div class="col-md-7">
+            <p>
+              <a href="https://github.com/Tech-Byte-Tips/RPi-StreamBox">RPi-Streambox</a> is a bash application designed to set up Debian based systems (Raspberry Pis) as an nginx RTMP multi-streamer.<br><br>
+
+              It relies on NginX and Stunnel4 to re-broadcast a stream input into many backend providers.<br><br>
+              
+              <b>Development stack:</b> Bash.
+            </p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/j9WREyeLQ1c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Traefik-Control Card -->
+      <div class="card hideable" data-tech="Software Engineering" data-lang="Bash">
+        <br>
+        <div class="row no-gutters">
+          <!-- Col 1 -->
+          <div class="col-md-2 text-center">
+            <img src="images/bash.png" width="100" height="100">
+          </div>          
+          <!-- Col 2 -->
+          <div class="col-md-3 text-center">
+            Traefik-Control Server<br>
+            [2023]
+          </div>
+          <!-- Col 3 -->
+          <div class="col-md-7">
+            <p>
+              <a href="https://github.com/Tech-Byte-Tips/Traefik-Control">Traefik-Control</a> is a bash application designed to set up Debian based systems (Raspberry Pis) as a Traefik Reverse Proxy.<br><br>
+              
+              <b>Development stack:</b> Bash.
+            </p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/nVchppI0fn8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+      
+      <!-- RPi-PXE Card -->
+      <div class="card hideable" data-tech="Software Engineering" data-lang="Bash">
+        <br>
+        <div class="row no-gutters">
+          <!-- Col 1 -->
+          <div class="col-md-2 text-center">
+            <img src="images/bash.png" width="100" height="100">
+          </div>          
+          <!-- Col 2 -->
+          <div class="col-md-3 text-center">
+            RPi-PXE Server<br>
+            [2023]
+          </div>
+          <!-- Col 3 -->
+          <div class="col-md-7">
+            <p>
+              <a href="https://github.com/Tech-Byte-Tips/RPi-PXE">RPI-PXE</a> is a bash application designed to set up Debian based systems (Raspberry Pis) as a network PXE server.<br><br>
+              
+              <b>Development stack:</b> Bash.
+            </p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/d85Cza2mUTs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- JavaScript Widget Collection CV Card -->
+      <div class="card hideable" data-tech="Software Engineering" data-lang="JavaScript,HTML,Bootstrap">
         <br>
         <div class="row no-gutters">
           <br>
@@ -131,21 +201,79 @@
           </div>          
           <!-- Col 2 -->
           <div class="col-md-3 text-center">
-            This Website<br>[2020]
+            JavaScript Widget Collection<br>[2023]
           </div>
           <!-- Col 3 -->
           <div class="col-md-7">
             <p>
-              <b>Curriculum Vitae</b> is a responsive website that contains my information.<br><br>
-              The implementation relies on HTML, JavaScript, and the Bootstrap 4.4 framework.<br><br>
-              JavaScript is used for the filter logic and to populate the dropdowns based on the existing data in the page.
+              <a href="https://github.com/PREngineer/JavaScript-Widgets">The JavaScript Widget Collection</a> is an ever growing set of widgets written in JavaScript that can be embedded into Web Applications.<br><br>
+              <b>Development stack:</b> HTML, JavaScript, and the Bootstrap framework.<br><br>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jorge Pabon CV Card -->
+      <div class="card hideable" data-tech="Software Engineering" data-lang="JavaScript,HTML,Bootstrap">
+        <br>
+        <div class="row no-gutters">
+          <br>
+          <!-- Col 1 -->
+          <div class="col-md-2 text-center">
+            <img src="images/js.png" width="100" height="100">
+          </div>          
+          <!-- Col 2 -->
+          <div class="col-md-3 text-center">
+            Jorge Pabón's CV<br>[2020]
+          </div>
+          <!-- Col 3 -->
+          <div class="col-md-7">
+            <p>
+              <a href="https://github.com/PREngineer/prengineer.github.io">This website</a> is a responsive website that contains my CV and sample projects.<br><br>
+              <b>Development stack:</b> HTML, JavaScript, and the Bootstrap 4.4 framework.<br><br>
+              
+              <b>Infrastructure stack:</b> Originally hosted in <a href="https://prengineer.github.io">GitHub.</a> Now is part of a Jenkins CI/CD pipeline that builds a docker image and deploys it to a Kubernetes cluster hosted in Raspberry Pi devices.
             </p>
           </div>
         </div>
       </div>
       
-      <!-- Card -->
-      <div class="card hideable" data-tech="Programming,Databases" data-lang="PHP,JavaScript,HTML,Bootstrap">
+      <!-- CanaLogs Card -->
+      <div class="card hideable" data-tech="Software Engineering" data-lang="PHP,JavaScript,HTML,Bootstrap">
+        <br>
+        <div class="row no-gutters">
+          <br>
+          <!-- Col 1 -->
+          <div class="col-md-2 text-center">
+            <img src="images/php8.png" width="100" height="100">
+          </div>          
+          <!-- Col 2 -->
+          <div class="col-md-3 text-center">
+            CannaLogs<br>[2020]
+          </div>
+          <!-- Col 3 -->
+          <div class="col-md-7">
+            <p>
+              <a href="https://github.com/PREngineer/CannaLogs">CannaLogs</a> is a Progressive Web Application developed to help the Cannabis industry and enthusiast community track and log their grows.
+              
+              It serves to log, track, reference, and share information of cannabis grows for corporations and groups of enthusiasts.<br><br>
+
+              For corporations, it helps with record keeping for compliance.  It also serves as a log book with plenty of details so that they can reference and replicate previous successful grows.<br><br>
+
+              For communities, it helps as a source of knowledge sharing and communication.<br><br>
+              
+              <b>Development stack:</b> PHP 8, MySQL, HTML, CSS, JavaScript, and the Bootstrap 4.4 framework.<br><br>
+              
+              <b>Infrastructure stack:</b> Originally hosted on prem using VMWare vSphere.  Now is part of a Jenkins CI/CD pipeline that builds a docker image and deploys it to a Kubernetes cluster hosted in Raspberry Pi devices.<br><br>
+              
+              Use the following URL to view the <a href="https://420.x24hr.com">demo</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event Manager Card -->
+      <div class="card hideable" data-tech="Software Engineering" data-lang="PHP,JavaScript,HTML,Bootstrap">
         <br>
         <div class="row no-gutters">
           <br>
@@ -160,22 +288,88 @@
           <!-- Col 3 -->
           <div class="col-md-7">
             <p>
-              <b>Event Manager</b> is a Progressive Web Application developed for <a href="https://accenture.com">Accenture</a>, a Fortune 500 company.<br><br>
-              It serves as an event management platform, an organization membership management tool, and analytics engine among its features.<br><br>
-              The implementation relies on HTML, CSS, JavaScript, PHP 7, SQL, and the Bootstrap 3.7 framework.<br><br>
-              You can try a live preview of the application <a href="http://webjmps.byethost16.com/eventmanager">here</a>.<br><br>
-              Use the following credentials to experiment all the features:<br><br>
-              <b>Global Administrator:</b> administrator/password<br>
-              <b>Org Administrator:</b> admin/password<br>
-              <b>Point of Contact:</b> poc/password<br>
-              <b>Approver:</b> approver/password
+              <a href="https://github.com/PREngineer/Event-Manager">Event Manager</a> is a Progressive Web Application developed while working at <a href="https://accenture.com">Accenture</a>.
+              It is a personal project to help the North American Employee Resource Groups.<br><br>
+              It serves as an event management platform, an organization membership management tool, and analytics engine amongst other features.<br><br>
+              
+              The original Proof of Concept was developed in Procedural PHP (fast) and later was refactored to Object Oriented code for a multi-organization branch.<br><br>
+              
+              <b>Development stack:</b> PHP 7, MySQL, HTML, CSS, JavaScript, and the Bootstrap 3.7 framework.<br><br>
+              
+              <b>Infrastructure stack:</b> Originally hosted in Azure IaaS. Now is part of a Jenkins CI/CD pipeline that builds a docker image and deploys it to a Kubernetes cluster hosted in Raspberry Pi devices.
+              
+              <div class="card text-white bg-info mb-3" style="max-width: 40rem;">
+                <div class="card-header">Use the following credentials to experiment all the <a href="https://event-manager.jlpc.dns1.us">demo</a> features:</div>
+                <div class="card-body">
+                  <table class="table">
+                    <head>
+                      <th>Account Type</th>
+                      <th>Username</th>
+                      <th>Password</th>
+                    </head>
+                    <tr>
+                      <td>Global Administrator</td>
+                      <td>administrator</td>
+                      <td>password</td>
+                    </tr>
+
+                    <tr>
+                      <td>Organization Administrator</td>
+                      <td>admin</td>
+                      <td>password</td>
+                    </tr>
+
+                    <tr>
+                      <td>Point of Contact</td>
+                      <td>poc</td>
+                      <td>password</td>
+                    </tr>
+
+                    <tr>
+                      <td>Approver</td>
+                      <td>approver</td>
+                      <td>password</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
             </p>
           </div>
         </div>
       </div>
 
-      <!-- Card -->
-      <div class="card hideable" data-tech="Programming,Databases" data-lang="C#,PowerShell">
+      <!-- Sprinter Card -->
+      <div class="card hideable" data-tech="Software Engineering" data-lang="PHP,JavaScript,HTML,Bootstrap">
+        <br>
+        <div class="row no-gutters">
+          <br>
+          <!-- Col 1 -->
+          <div class="col-md-2 text-center">
+            <img src="images/php7.png" width="100" height="100">
+          </div>          
+          <!-- Col 2 -->
+          <div class="col-md-3 text-center">
+            Sprinter<br>[2019]
+          </div>
+          <!-- Col 3 -->
+          <div class="col-md-7">
+            <p>
+              <a href="https://github.com/PREngineer/Sprinter">Sprinter</a> is a Web Application developed while working at <a href="https://accenture.com">Accenture</a>.
+              It is a personal project discussed and approved by Accenture Federal Services' leadership to incentivize employees to engage in a more healthy lifestyle.<br><br>
+              The company would create healthy sprint style events for people to compete.  The winner would receive a prize on each sprint.<br><br>
+              
+              <b>Development stack:</b> PHP 7, MySQL, HTML, CSS, JavaScript, and the Bootstrap 3.7 framework.<br><br>
+              
+              <b>Infrastructure stack:</b> Originally hosted in Azure IaaS.  Now is part of a Jenkins CI/CD pipeline that builds a docker image and deploys it to a Kubernetes cluster hosted in Raspberry Pi devices.<br><br>
+              
+              Use the following link to try the <a href="https://sprinter.jlpc.dns1.us">demo</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- UC&C Tools Card -->
+      <div class="card hideable" data-tech="Software Engineering" data-lang="C#,PowerShell">
         <br>
         <div class="row no-gutters">
           <!-- Col 1 -->
@@ -184,29 +378,95 @@
           </div>          
           <!-- Col 2 -->
           <div class="col-md-3 text-center">
-            Phone Management System<br>
+            UC&C Tools<br>
             [2018]
           </div>
           <!-- Col 3 -->
           <div class="col-md-7">
             <p>
-              <b>Phone Management System</b> is a Windows Presentation Foundation Application.<br><br>
-              It serves as an interface between Databases, Microsoft Identity Manager, and Azure services.<br><br>
-              The implementation relies on C# and PowerShell.<br><br>
-              <a href="images/WPFApp02/01.png"><img src="images/WPFApp02/01.png" width="50" height="50"></a>
-              <a href="images/WPFApp02/02.png"><img src="images/WPFApp02/02.png" width="50" height="50"></a>
-              <a href="images/WPFApp02/03.png"><img src="images/WPFApp02/03.png" width="50" height="50"></a>
-              <a href="images/WPFApp02/04.png"><img src="images/WPFApp02/04.png" width="50" height="50"></a>
-              <a href="images/WPFApp02/05.png"><img src="images/WPFApp02/05.png" width="50" height="50"></a>
-              <a href="images/WPFApp02/06.png"><img src="images/WPFApp02/06.png" width="50" height="50"></a>
-              <a href="images/WPFApp02/07.png"><img src="images/WPFApp02/07.png" width="50" height="50"></a>
+              <b>Unified Communication & Collaboration Tools</b> is a Windows Presentation Foundation Application developed for <a href="https://accenture.com">Accenture</a>.<br><br>
+              It serves as an interface between Databases, Microsoft Identity Manager, Active Directory, Azure AD, and other Azure/O365 services.  This application allowed several Tier 3 teams to offload responsibilities to Tier 1 support.<br><br>
+              
+              <b>Development stack:</b> C#, .NET, PowerShell.<br><br>
+              
+              <b>Infrastructure stack:</b> Hosted in Azure IaaS.
+
+              <!-- Carousel -->
+              <div id="UCCToolIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#UCCToolIndicators" data-slide-to="0" class="active"></li>
+                  <li data-target="#UCCToolIndicators" data-slide-to="1"></li>
+                  <li data-target="#UCCToolIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="images/WPFApp02/01.png" class="d-block w-100" alt="Main Menu">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/WPFApp02/02.png" class="d-block w-100" alt="Number Lookup">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/WPFApp02/03.png" class="d-block w-100" alt="Assign Number">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/WPFApp02/04.png" class="d-block w-100" alt="Decommission Number">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/WPFApp02/05.png" class="d-block w-100" alt="Remove Duplicates">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/WPFApp02/06.png" class="d-block w-100" alt="FIM/MIM Group Scope">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/WPFApp02/07.png" class="d-block w-100" alt="Modify SAM Account Name">
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#UCCToolIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#UCCToolIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
             </p>
           </div>
         </div>
       </div>
 
-      <!-- Card -->
-      <div class="card hideable" data-tech="Programming" data-lang="C#">
+      <!-- Estoy Bien PR Card -->
+      <div class="card hideable" data-tech="Software Engineering" data-lang="PHP,JavaScript,HTML,Bootstrap">
+        <br>
+        <div class="row no-gutters">
+          <br>
+          <!-- Col 1 -->
+          <div class="col-md-2 text-center">
+            <img src="images/php7.png" width="100" height="100">
+          </div>          
+          <!-- Col 2 -->
+          <div class="col-md-3 text-center">
+            Estoy Bien PR<br>[2017]
+          </div>
+          <!-- Col 3 -->
+          <div class="col-md-7">
+            <p>
+              <a href="https://github.com/PREngineer/EstoyBienPR">Estoy Bien PR</a> is a personal project consisting of Progressive Web Application developed in one night.<br><br>
+              It was created after becoming aware of the difficulty for many individuals to find out if their relatives were safe in the immediate aftermath of Huracán María through Puerto Rico.<br><br>
+              It allowed people to post information about their status for their families to search.
+                            
+              <b>Development stack:</b> PHP 7, MySQL, HTML, CSS, JavaScript, and the Bootstrap 3.7 framework.<br><br>
+              
+              <b>Infrastructure stack:</b> Originally hosted in Azure IaaS. Now is part of a Jenkins CI/CD pipeline that builds a docker image and deploys it to a Kubernetes cluster hosted in Raspberry Pi devices.<br><br>
+              
+              Use the following URL to view the <a href="https://estoy-bien.jlpc.dns1.us">demo</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- I&AM Tools Card -->
+      <div class="card hideable" data-tech="Software Engineering" data-lang="C#,PowerShell">
         <br>
         <div class="row no-gutters">
           <!-- Col 1 -->
@@ -215,25 +475,79 @@
           </div>          
           <!-- Col 2 -->
           <div class="col-md-3 text-center">
-            Identity Management System<br>
+            I&AM Tools<br>
             [2017]
           </div>
           <!-- Col 3 -->
           <div class="col-md-7">
             <p>
-              <b>Identity Management System</b> is a Windows Presentation Foundation Application.<br><br>
-              It serves as an interface between Active Directory, Microsoft Identity Manager, and Azure services.<br><br>
-              The implementation relies on C# and PowerShell.<br><br>
-              <a href="images/WPFApp01/01.png"><img src="images/WPFApp01/01.png" width="50" height="50"></a>
-              <a href="images/WPFApp01/02.png"><img src="images/WPFApp01/02.png" width="50" height="50"></a>
-              <a href="images/WPFApp01/03.png"><img src="images/WPFApp01/03.png" width="50" height="50"></a>
+              <b>Identity and Access Management Tools</b> is a Windows Presentation Foundation (WPF) application developed for <a href="https://accenture.com">Accenture</a>.<br><br>
+              It serves as an interface between Active Directory, Azure AD, Microsoft Identity Manager, and other Azure/O365 services.  This application allowed several Tier 3 teams to offload responsibilities to Tier 1 support.<br><br>
+              
+              <b>Development stack:</b> C#, .NET, PowerShell.<br><br>
+              
+              <b>Infrastructure stack:</b> Hosted in Azure IaaS.
+              
+              <!-- Carousel -->
+              <div id="IAMToolIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#IAMToolIndicators" data-slide-to="0" class="active"></li>
+                  <li data-target="#IAMToolIndicators" data-slide-to="1"></li>
+                  <li data-target="#IAMToolIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="images/WPFApp01/01.png" class="d-block w-100" alt="Main Menu">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/WPFApp01/02.png" class="d-block w-100" alt="Privileged Account Creation">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/WPFApp01/03.png" class="d-block w-100" alt="User Lookup">
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#IAMToolIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#IAMToolIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
             </p>
           </div>
         </div>
       </div>
       
-      <!-- Card -->
-      <div class="card hideable" data-tech="Programming,Databases" data-lang="PHP,JavaScript,HTML,Bootstrap">
+      <!-- nZEDb Deploy Card -->
+      <div class="card hideable" data-tech="Software Engineering" data-lang="Bash">
+        <br>
+        <div class="row no-gutters">
+          <!-- Col 1 -->
+          <div class="col-md-2 text-center">
+            <img src="images/bash.png" width="100" height="100">
+          </div>          
+          <!-- Col 2 -->
+          <div class="col-md-3 text-center">
+            nZEDb Deploy<br>
+            [2017]
+          </div>
+          <!-- Col 3 -->
+          <div class="col-md-7">
+            <p>
+              <a href="https://github.com/PREngineer/nZEDb-deploy">nZEDb Deploy</a> is a collection of bash scripts designed to set up Debian based systems as an nZEDb Usenet Indexer.<br><br>
+
+              This was in support of the nZEDb forums and community that wanted to easily setup their own environments for development and testing.<br><br>
+              
+              <b>Development stack:</b> Bash.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Donations Desk Card -->
+      <div class="card hideable" data-tech="Software Engineering" data-lang="PHP,JavaScript,HTML,Bootstrap">
         <br>
         <div class="row no-gutters">
           <!-- Col 1 -->
@@ -248,19 +562,38 @@
           <!-- Col 3 -->
           <div class="col-md-7">
             <p>
-              <b>Donations Desk</b> is a Web & Mobile Application for <a href="https://afc.pr">Asesores Financieros Comunitarios</a>, a non-for profit organization.<br><br>
+              <a href="donations-desk.jlpc.dns1.us">Donations Desk</a> is a Web & Mobile Application for <a href="https://afc.pr">Asesores Financieros Comunitarios</a>, a non-for profit organization.<br><br>
               It serves as a crowd funding platform for participant not-for-profit organizations to get donations via PayPal and promotes them to the general public in Puerto Rico.<br><br>
-              The implementation relies on HTML, CSS, JavaScript, PHP 5, MySQL, and the Bootstrap 3.7 framework.<br><br>
-              You can try a live preview of the application <a href="http://webjmps.byethost16.com/donationsdesk/">here</a>.<br><br>
-              Use the following credentials to experiment all the features:<br><br>
-              <b>Administrator:</b> admin/password<br>
+              This application was the capstone project for my Bachelor's degree in Computer Engineering at the Polytechnic University of Puerto Rico.<br><br>
+              
+              <b>Development stack:</b> PHP (5), JavaScript, MySQL, HTML, CSS, and the Bootstrap 3.7 framework.<br><br>
+              
+              <b>Infrastructure stack:</b> Hosted in Azure IaaS.
+              
+              <div class="card text-white bg-info mb-3" style="max-width: 40rem;">
+                <div class="card-header">Use the following credentials to experiment all the demo features:</div>
+                <div class="card-body">
+                  <table class="table">
+                    <head>
+                      <th>Account Type</th>
+                      <th>Username</th>
+                      <th>Password</th>
+                    </head>
+                    <tr>
+                      <td>Administrator</td>
+                      <td>admin</td>
+                      <td>password</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
             </p>
           </div>
         </div>
       </div>
 
-      <!-- Card -->
-      <div class="card hideable" data-tech="Programming,Game Design" data-lang="C#">
+      <!-- Marvin's Space Exploration Card -->
+      <div class="card hideable" data-tech="Software Engineering,Game Design" data-lang="C#">
         <br>
         <div class="row no-gutters">
           <!-- Col 1 -->
@@ -275,21 +608,53 @@
           <!-- Col 3 -->
           <div class="col-md-7">
             <p>
-              <b>Marvin's Space Exploration</b> is a platformer PC game developed using the Unity 3D engine.<br><br>
-              The implementation relies on C#.<br><br>
-              <a href="images/Game01/01.png"><img src="images/Game01/01.png" width="50" height="50"></a>
-              <a href="images/Game01/02.png"><img src="images/Game01/02.png" width="50" height="50"></a>
-              <a href="images/Game01/03.png"><img src="images/Game01/03.png" width="50" height="50"></a>
-              <a href="images/Game01/04.png"><img src="images/Game01/04.png" width="50" height="50"></a>
-              <a href="images/Game01/05.png"><img src="images/Game01/05.png" width="50" height="50"></a>
-              <a href="images/Game01/06.png"><img src="images/Game01/06.png" width="50" height="50"></a>
+              <b>Marvin's Space Exploration</b> is a platformer PC game developed using the Unity 3D engine, while at the Polytechnic University of Puerto Rico, for the Game Design course.<br><br>
+              
+              <b>Development stack:</b> C#, Mono, .NET.
+
+              <!-- Carousel -->
+              <div id="MarvinGameIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#MarvinGameIndicators" data-slide-to="0" class="active"></li>
+                  <li data-target="#MarvinGameIndicators" data-slide-to="1"></li>
+                  <li data-target="#MarvinGameIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="images/Game01/01.png" class="d-block w-100" alt="Main Menu">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/Game01/02.png" class="d-block w-100" alt="Privileged Account Creation">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/Game01/03.png" class="d-block w-100" alt="User Lookup">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/Game01/04.png" class="d-block w-100" alt="User Lookup">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/Game01/05.png" class="d-block w-100" alt="User Lookup">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="images/Game01/06.png" class="d-block w-100" alt="User Lookup">
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#MarvinGameIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#MarvinGameIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
             </p>
           </div>
         </div>
       </div>
 
-      <!-- Card -->
-      <div class="card hideable" data-tech="Programming" data-lang="C++">
+      <!-- Restaurant System Card -->
+      <div class="card hideable" data-tech="Software Engineering" data-lang="C++">
         <br>
         <div class="row no-gutters">
           <!-- Col 1 -->
@@ -304,16 +669,17 @@
           <!-- Col 3 -->
           <div class="col-md-7">
             <p>
-              <b>Restaurant System</b> is a restaurant management platform in CLI format.<br><br>
-              It allows you to process orders and manage the menu.<br><br>
-              The implementation relies on C++.<br><br>
+              <b>Restaurant System</b> is a restaurant management platform in CLI format developed while at the Polytechnic University of Puerto Rico.
+              It allows you to process orders and manage the restaurant menu.  The system generates receipts for transactions and keeps a log of all sales.<br><br>
+              
+              <b>Development stack:</b> C++.
             </p>
           </div>
         </div>
       </div>
 
-      <!-- Card -->
-      <div class="card hideable" data-tech="Programming" data-lang="C++">
+      <!-- Soda Machine Emulator Card -->
+      <div class="card hideable" data-tech="Software Engineering" data-lang="C++">
         <br>
         <div class="row no-gutters">
           <!-- Col 1 -->
@@ -328,40 +694,19 @@
           <!-- Col 3 -->
           <div class="col-md-7">
             <p>
-              <b>Soda Machine Emulator</b> is a CLI simulation of the system that controls a soda machine's mechanism.<br><br>
+              <b>Soda Machine Emulator</b> is a system that controls a soda machine's mechanism.<br><br>
               It allows you to process orders and manage the inventory.<br><br>
-              The implementation relies on C++.<br><br>
-            </p>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Card -->
-      <div class="card hideable" data-tech="Networking,Virtualization">
-        <br>
-        <div class="row no-gutters">
-          <!-- Col 1 -->
-          <div class="col-md-2 text-center">
-            <img src="images/virtualization.png" alt="PHP 5" width="100" height="100">
-          </div>          
-          <!-- Col 2 -->
-          <div class="col-md-3 text-center">
-            Forensic Lab<br>
-            [2013]
-          </div>
-          <!-- Col 3 -->
-          <div class="col-md-7">
-            <p>
-              During my second year at the Polytechnic University of Puerto Rico, I put together a forensic laboratory for the upcoming Computer Forensics class.<br><br>
-              This laboratory had 8 Workstations and 2 hypervisor hosts that would virtualize the machines.<br><br>
-              The implementation relies on VMWare ESXi.<br><br>
+
+              This project was developed at the Polytechnic University of Puerto Rico.
+              
+              <b>Development stack:</b> C++.<br><br>
             </p>
           </div>
         </div>
       </div>
 
-      <!-- Card -->
-      <div class="card hideable" data-tech="Programming" data-lang="Java">
+      <!-- Car Rental Management System Card -->
+      <div class="card hideable" data-tech="Software Engineering" data-lang="Java">
         <br>
         <div class="row no-gutters">
           <!-- Col 1 -->
@@ -377,15 +722,24 @@
           <div class="col-md-7">
             <p>
               <b>Car Rental Management System</b> is a car rental command line program to manage clients, inventory, and rental leases.<br><br>
-              The implementation relies on Java.<br><br>
-              <a href="images/carRental.gif"><img src="images/carRental.gif" width="50" height="50"></a>
+              This project was created while at the University of Puerto Rico, Mayagüez Campus.<br><br>
+              <b>Development stack:</b> Java.
+
+              <!-- Carousel -->
+              <div id="MarvinGameIndicators" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="images/carRental.gif" class="d-block w-100" alt="Car Rental System">
+                  </div>
+                </div>
+              </div>
             </p>
           </div>
         </div>
       </div>
 
-      <!-- Card -->
-      <div class="card hideable" data-tech="Programming" data-lang="Java">
+      <!-- Stock Exchange Simulator Card -->
+      <div class="card hideable" data-tech="Software Engineering" data-lang="Java">
         <br>
         <div class="row no-gutters">
           <!-- Col 1 -->
@@ -402,14 +756,17 @@
             <p>
               <b>Stock Exchange Simulator</b> is a CLI simulator.<br><br>
               It allows you to add stocks, buy, sell, and manage an investor's profile.<br><br>
-              The implementation relies on Java.
+              
+              This project was created while at the University of Puerto Rico, Mayagüez Campus.<br><br>
+
+              <b>Development stack:</b> Java.
             </p>
           </div>
         </div>
       </div>
 
-      <!-- Card -->
-      <div class="card hideable" data-tech="Programming,Game Design" data-lang="Java">
+      <!-- Void Space Card -->
+      <div class="card hideable" data-tech="Software Engineering,Game Design" data-lang="Java">
         <br>
         <div class="row no-gutters">
           <!-- Col 1 -->
@@ -425,7 +782,8 @@
           <div class="col-md-7">
             <p>
               <b>Void Space</b> is a PC Arcade-style Game.<br><br>
-              The implementation relies on Java.
+              This project was created while at the University of Puerto Rico, Mayagüez Campus.<br><br>
+              <b>Development stack:</b> Java.
             </p>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/T85nKIHn2fo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
@@ -497,12 +855,12 @@
     }
   )
   
-  // Shows the second dropdown if Programming is chosen
+  // Shows the second dropdown if Software Engineering is chosen
   function showTechs( value )
   {
     changeTopLogoImage( value );
 
-    if( value == 'Programming' )
+    if( value == 'Software Engineering' )
     {
       lang.style.display = "block";
       langlabel.style.display = "block";
@@ -548,15 +906,15 @@
     }
   }
 
-  // Selects only the programming language cards that match
+  // Selects only the Software Engineering language cards that match
   function filterLanguage( value )
   {
     changeTopLogoImage( value );
 
     // Display all cards if nothing chosen.
-    if( value == '-All Programming-' )
+    if( value == '-All Software Engineering-' )
     {
-      showTechs( 'Programming' );
+      showTechs( 'Software Engineering' );
     }
     // Display the ones that match
     else
@@ -593,23 +951,14 @@
     
     switch( value )
     {
-      case '-All Programming-':
+      case '-All Software Engineering-':
         image.src = 'images/allprogramming.png';
         break;
-      case 'Programming':
+      case 'Software Engineering':
         image.src = 'images/allprogramming.png';
-        break;
-      case 'Databases':
-        image.src = 'images/sql.png';
         break;
       case 'Game Design':
         image.src = 'images/controller.png';
-        break;
-      case 'Networking':
-        image.src = 'images/network.png';
-        break;
-      case 'Virtualization':
-        image.src = 'images/vmware.png';
         break;
       case 'Bootstrap':
         image.src = 'images/bootstrap.png';
@@ -667,8 +1016,8 @@
 
     // Firstly, put the empty option on top
     var o = document.createElement("option");
-    o.value = '-All Programming-';
-    o.text = '-All Programming-';
+    o.value = '-All Software Engineering-';
+    o.text = '-All Software Engineering-';
     lang.appendChild(o);
     
     langs.sort();
