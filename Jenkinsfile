@@ -40,7 +40,7 @@ spec:
     stage('Clone Repository to Kaniko') {
       steps {
         container('kaniko') {
-          git url: 'https://github.com/PREngineer/prengineer.github.io', branch: 'main'
+          git url: 'https://github.com/PREngineer/prengineer.github.io', branch: 'master'
         }
       }
     }
