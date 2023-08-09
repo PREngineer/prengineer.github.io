@@ -62,10 +62,17 @@ spec:
     stage('Deploy to Kubernetes Cluster'){
       steps {
         sshagent(['RPi-SSH']) {
-          sh '''
-            curl https://raw.githubusercontent.com/PREngineer/prengineer.github.io/master/cvjp-deployment.yaml > cvjp-deployment.yaml
-            kubectl apply -f cvjp-deployment.yaml
-          '''
+          script {
+            // Connect, adding new host, and clone the repository
+            sh 'ssh -oStrictHostKeyChecking=accept-new pi@10.0.0.80 curl https://raw.githubusercontent.com/PREngineer/prengineer.github.io/master/cvjp-deployment.yaml > ~/jenkins-deployments/cvjp-deployment.yaml'
+            // Deploy
+            try {
+              sh 'ssh pi@10.0.0.80 kubectl apply -f ~/jenkins-deployments/cvjp-deployment.yaml'
+            }
+            catch(error) {
+              sh 'ssh pi@10.0.0.80 kubectl create -f ~/jenkins-deployments/cvjp-deployment.yaml'
+            }
+          }          
         }
       }
     }
