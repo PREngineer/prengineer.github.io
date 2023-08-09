@@ -1,0 +1,81 @@
+# Create the Production Namespace (if not exist)
+
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: production
+  labels:
+    name: production
+
+---
+
+# Create the App Deployment
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cvjp-deployment
+  namespace: production
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cvjp
+  template:
+    metadata:
+      labels:
+        app: cvjp
+    spec:
+      containers:
+        - name: cvjp
+          image: prengineer/cvjp:latest
+          resources:
+            limits:
+              memory: "500Mi"
+              cpu: "1000m"
+          ports:
+            - name: httpport
+              containerPort: 80
+          livenessProbe:
+            httpGet:
+              path: "/"
+              port: 80
+            initialDelaySeconds: 300
+            periodSeconds: 60
+            timeoutSeconds: 60
+            failureThreshold: 30
+          readinessProbe:
+            httpGet:
+              path: "/"
+              port: 80
+            initialDelaySeconds: 300
+            periodSeconds: 60
+            timeoutSeconds: 30
+            failureThreshold: 30
+
+---
+
+# Create the Exposed App Service
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: cvjp-external-service
+  namespace: production
+  annotations:
+      prometheus.io/scrape: 'true'
+      prometheus.io/path:   /
+      prometheus.io/port:   '80'
+spec:
+  selector:
+    app: cvjp
+  type: LoadBalancer
+  ports:
+  - name: httpport
+    protocol: TCP
+    port: 8000
+    targetPort: 80
+status:
+  loadBalancer:
+    ingress:
+    - ip: 10.0.0.80
