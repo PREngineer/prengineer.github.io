@@ -36,22 +36,6 @@ spec:
           ports:
             - name: httpport
               containerPort: 80
-          livenessProbe:
-            httpGet:
-              path: "/"
-              port: 80
-            initialDelaySeconds: 300
-            periodSeconds: 60
-            timeoutSeconds: 60
-            failureThreshold: 30
-          readinessProbe:
-            httpGet:
-              path: "/"
-              port: 80
-            initialDelaySeconds: 300
-            periodSeconds: 60
-            timeoutSeconds: 30
-            failureThreshold: 30
 
 ---
 
@@ -62,10 +46,6 @@ kind: Service
 metadata:
   name: cvjp-external-service
   namespace: production
-  annotations:
-      prometheus.io/scrape: 'true'
-      prometheus.io/path:   /
-      prometheus.io/port:   '80'
 spec:
   selector:
     app: cvjp
