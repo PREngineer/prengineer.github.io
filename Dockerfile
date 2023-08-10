@@ -2,7 +2,7 @@
 FROM alpine:latest
 
 # Maintainer information and description
-LABEL maintainer="Jorge Pabón <pianistapr@hotmail.com>" description="Alpine + Apache2 + PHP8 + PDO Extensions"
+LABEL maintainer="Jorge Pabón <pianistapr@hotmail.com>" description="Alpine + Apache2 with my CV in a JavaScript web app."
 
 # Setup Apache, also create the directory that will hold our application files /app
 RUN apk --no-cache --update \
@@ -18,6 +18,7 @@ EXPOSE 80
 
 # Add the entrypoint script
 ADD entrypoint.sh /
+RUN ["chmod", "+x", "/entrypoint.sh"]
 
 # Execute the entrypoint script
 ENTRYPOINT ["/entrypoint.sh"]

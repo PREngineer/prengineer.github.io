@@ -73,7 +73,7 @@ spec:
   ports:
   - name: httpport
     protocol: TCP
-    port: 8000
+    port: 8001
     targetPort: 80
 status:
   loadBalancer:

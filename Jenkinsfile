@@ -63,15 +63,13 @@ spec:
       steps {
         sshagent(['RPi-SSH']) {
           script {
-            // Connect, adding new host, and clone the repository
-            sh 'ssh -oStrictHostKeyChecking=accept-new pi@10.0.0.80 curl https://raw.githubusercontent.com/PREngineer/prengineer.github.io/master/cvjp-deployment.yaml > ~/jenkins-deployments/cvjp-deployment.yaml'
-            // Deploy
-            try {
-              sh 'ssh pi@10.0.0.80 kubectl apply -f ~/jenkins-deployments/cvjp-deployment.yaml'
-            }
-            catch(error) {
-              sh 'ssh pi@10.0.0.80 kubectl create -f ~/jenkins-deployments/cvjp-deployment.yaml'
-            }
+            // Define the code to run in the remote machine, then execute in k3s master node
+            sh '''
+            script="curl https://raw.githubusercontent.com/PREngineer/prengineer.github.io/master/cvjp-deployment.yaml > ~/jenkins-deployments/cvjp-deployment.yaml;
+            kubectl apply -f ~/jenkins-deployments/cvjp-deployment.yaml"
+            
+            ssh -oStrictHostKeyChecking=accept-new pi@10.0.0.80 ${script}
+            '''
           }          
         }
       }
