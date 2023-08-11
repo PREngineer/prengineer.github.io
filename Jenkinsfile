@@ -17,7 +17,6 @@ spec:
     - 1d
   - name: kaniko
     image: gcr.io/kaniko-project/executor:debug
-    imagePullPolicy: Always
     command:
     - sleep
     args:
