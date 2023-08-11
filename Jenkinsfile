@@ -9,12 +9,6 @@ yaml '''
 kind: Pod
 spec:
   containers:
-  - name: alpine
-    image: alpine:latest
-    command:
-    - sleep
-    args:
-    - 1d
   - name: kaniko
     image: gcr.io/kaniko-project/executor:debug
     command:
