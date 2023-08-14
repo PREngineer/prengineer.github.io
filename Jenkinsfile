@@ -58,9 +58,12 @@ spec:
           script {
             // Define the code to run in the remote machine, then execute in k3s master node
             sh '''
-              script="if [ -f ~/jenkins-deployments/cvjp-deployment.yaml ]; then
-                        kubectl delete -f ~/jenkins-deployments/cvjp-deployment.yaml
-                      fi"
+              script="$(cat <<-EOF
+                if [ -f ~/jenkins-deployments/cvjp-deployment.yaml ]; then
+                  kubectl delete -f ~/jenkins-deployments/cvjp-deployment.yaml
+                fi
+              EOF
+              )"
 
               ssh -oStrictHostKeyChecking=accept-new pi@10.0.0.80 ${script}
             '''
