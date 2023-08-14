@@ -51,21 +51,18 @@ spec:
         }
       }
     }
-    // Stage #3 - Deploy the image to the production kubernetes cluster using an SSH agent
+    // Stage #3 - Remove previous deployment using an SSH agent
     stage('Remove previous deployment'){
       steps {
         sshagent(['RPi-SSH']) {
           script {
             // Define the code to run in the remote machine, then execute in k3s master node
             sh '''
-              script='$(cat <<-EOF
-                if [ -f ~/jenkins-deployments/cvjp-deployment.yaml ]; then
-                  kubectl delete -f ~/jenkins-deployments/cvjp-deployment.yaml
-                fi
-              EOF
-              )'
-
-              ssh -oStrictHostKeyChecking=accept-new pi@10.0.0.80 ${script}
+              echo 'if [ -f ~/jenkins-deployments/cvjp-deployment.yaml ]; then\n' > script.sh
+                echo 'kubectl delete -f ~/jenkins-deployments/cvjp-deployment.yaml\n' >> script.sh
+              echo 'fi' >> script.sh
+              
+              ssh -oStrictHostKeyChecking=accept-new pi@10.0.0.80 'sh -s' < script.sh
             '''
           }          
         }

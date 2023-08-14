@@ -1,14 +1,3 @@
-# Create the Production Namespace (if not exist)
-
-kind: Namespace
-apiVersion: v1
-metadata:
-  name: production
-  labels:
-    name: production
-
----
-
 # Create the App Deployment
 
 apiVersion: apps/v1
