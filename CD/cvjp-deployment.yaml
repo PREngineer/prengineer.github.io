@@ -1,0 +1,33 @@
+# Create the App Deployment
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  # Name of Deployment
+  name: cvjp
+  # Deploy to Production namespace
+  namespace: production
+spec:
+  # Amount of pods to deploy
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cvjp
+  template:
+    metadata:
+      labels:
+        app: cvjp
+    spec:
+      containers:
+        - name: cvjp
+          # Use the latest image from Docker Hub
+          image: prengineer/cvjp:latest
+          # Resource limits
+          resources:
+            limits:
+              memory: "500Mi"
+              cpu: "1000m"
+          # Listen on port 80
+          ports:
+            - name: httpport
+              containerPort: 80

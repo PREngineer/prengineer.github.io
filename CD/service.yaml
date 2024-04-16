@@ -1,0 +1,18 @@
+# Define how to expose the application
+
+apiVersion: v1
+kind: Service
+metadata:
+  # Service Name
+  name: cvjp
+  # Deployed to Production namespace
+  namespace: production
+spec:
+  selector:
+    # For the cvjp app
+    app: cvjp
+  ports:
+  # Expose port 80
+  - name: http
+    port: 80
+    targetPort: 80
