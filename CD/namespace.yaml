@@ -6,3 +6,5 @@
 #  name: production
 #  labels:
 #    name: production
+#    # Let ArgoCD manage this namespace from the devops-tools namespace
+#    argocd.argoproj.io/managed-by: devops-tools
