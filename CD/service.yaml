@@ -5,8 +5,8 @@ kind: Service
 metadata:
   # Service Name
   name: cvjp
-  # Deployed to Production namespace
-  namespace: production
+  # Deployed to cannalogs namespace
+  namespace: cvjp
 spec:
   selector:
     # For the cvjp app

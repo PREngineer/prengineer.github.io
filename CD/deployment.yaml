@@ -5,8 +5,8 @@ kind: Deployment
 metadata:
   # Name of Deployment
   name: cvjp
-  # Deploy to Production namespace
-  namespace: production
+  # Deploy to cvjp namespace
+  namespace: cvjp
 spec:
   # Amount of pods to deploy
   replicas: 1

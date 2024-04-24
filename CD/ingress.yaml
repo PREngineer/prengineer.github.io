@@ -15,8 +15,8 @@ metadata:
   labels:
     app: cvjp
   name: cvjp
-  # Deploy to production namespace
-  namespace: production
+  # Deploy to cvjp namespace
+  namespace: cvjp
 spec:
   rules:
   # Change to your domain
