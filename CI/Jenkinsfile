@@ -51,6 +51,16 @@ spec:
           '''
         }
       }
-    }    
+    }
+    // Stage #3 - Remove previous pods
+    stage('Delete previous pods for redeployment by ArgoCD') {
+      steps {
+        sshagent(credentials: ['k3s']) {
+          sh '''
+            ssh -o StrictHostKeyChecking=no -l jorge.l.pabon.cruz pi1 kubectl delete pods --all --namespace=cvjp
+          '''
+        }
+      }
+    }
   }
 }
