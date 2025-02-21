@@ -20,7 +20,7 @@ metadata:
 spec:
   rules:
   # Change to your domain
-  - host: jlpc.dns1.us
+  - host: <domain.tld>
     http:
       paths:
       - backend:
@@ -33,5 +33,5 @@ spec:
   tls:
   - hosts:
     # Change to your domain
-    - jlpc.dns1.us
+    - <domain.tld>
     secretName: cvjp-tls

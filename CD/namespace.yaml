@@ -1,10 +1,10 @@
 # Create the cvjp Namespace (if not exist)
 
-#kind: Namespace
-#apiVersion: v1
-#metadata:
-#  name: cvjp
-#  labels:
-#    name: cvjp
-#    # Let ArgoCD manage this namespace from the devops-tools namespace
-#    argocd.argoproj.io/managed-by: devops-tools
+kind: Namespace
+apiVersion: v1
+metadata:
+ name: cvjp
+ labels:
+   name: cvjp
+   # Let ArgoCD manage this namespace from the devops-tools namespace
+   argocd.argoproj.io/managed-by: devops-tools
