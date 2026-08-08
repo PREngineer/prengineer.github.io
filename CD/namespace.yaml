@@ -6,5 +6,5 @@ metadata:
  name: cvjp
  labels:
    name: cvjp
-   # Let ArgoCD manage this namespace from the devops-tools namespace
-   argocd.argoproj.io/managed-by: devops-tools
+   # Let ArgoCD manage this namespace from the jenkins namespace
+   argocd.argoproj.io/managed-by: jenkins
