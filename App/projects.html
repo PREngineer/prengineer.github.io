@@ -49,7 +49,7 @@
               <a class="nav-link" href="projects.html">Projects <span class="sr-only">(current)</span></a>
             </li>
           </ul>
-          <small class="navbar-text">Latest update: Aug 7, 2026</small>
+          <small class="navbar-text">Latest update: Sep 13, 2026</small>
           <a class="nav-link text-muted" href="" onclick="window.print();return false;">
             <svg class="bi bi-download" width="2em" height="2em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" d="M2.5 10a.5.5 0 01.5.5V14a1 1 0 001 1h12a1 1 0 001-1v-3.5a.5.5 0 011 0V14a2 2 0 01-2 2H4a2 2 0 01-2-2v-3.5a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
@@ -112,6 +112,38 @@
           <hr>
         </div>
       </div>
+
+      <!-- Stalker-Plexer Card -->
+      <div class="card hideable" data-tech="Software Engineering" data-lang="Go">
+        <br>
+        <div class="row no-gutters">
+          <!-- Col 1 -->
+          <div class="col-md-2 text-center">
+            <img src="images/go.png" width="100" height="100">
+          </div>
+          <!-- Col 2 -->
+          <div class="col-md-3 text-center">
+            Stalker-Plexer<br>
+            [2026]
+          </div>
+          <!-- Col 3 -->
+          <div class="col-md-7">
+            <p>
+              <a href="https://hub.docker.com/repository/docker/prengineer/stalker-plexer/general">Stalker-Plexer</a> is a containerized Go application that streams Ministra-based (Stalker Portal) IPTV channels to a Roku device using the Plex or Jellyfin apps.<br><br>
+
+              It bridges a Stalker portal IPTV backend with Plex/Jellyfin, allowing you to watch your IPTV lineup on your Roku through a familiar media server.<br><br>
+
+              <b>Development stack:</b> Go | Docker<br><br>
+
+              <span class="text-danger"><i>Note: Repository is private.</i></span>
+            </p>
+            <a href="https://www.youtube.com/watch?v=o2u_12wqflc" target="_blank">
+              <img src="https://img.youtube.com/vi/o2u_12wqflc/maxresdefault.jpg" class="img-fluid" alt="Stalker-Plexer Video">
+            </a>
+          </div>
+        </div>
+      </div>
+
 
       <!-- xTeVe Playlist Splitter Card -->
       <div class="card hideable" data-tech="Software Engineering" data-lang="Python">
@@ -615,7 +647,7 @@
               <b>Infrastructure stack:</b> Originally hosted in Azure IaaS. Now is part of a Jenkins CI/CD pipeline that builds a docker image and deploys it to a Kubernetes cluster hosted in Raspberry Pi devices.
               
               <div class="card text-white bg-info mb-3" style="max-width: 40rem;">
-                <div class="card-header">Use the following credentials to experiment all the <a href="https://event-manager.jlpc.dns1.us">demo</a> features:</div>
+                <div class="card-header">Use the following credentials to experiment all the <a href="https://event-manager.jlpc.ns01.us">demo</a> features:</div>
                 <div class="card-body">
                   <table class="table">
                     <head>
@@ -672,7 +704,7 @@
               
               <b>Infrastructure stack:</b> Originally hosted in Azure IaaS.  Now is part of a Jenkins CI/CD pipeline that builds a docker image and deploys it to a Kubernetes cluster hosted in Raspberry Pi devices.<br><br>
               
-              <!--Use the following link to try the <a href="https://sprinter.jlpc.dns1.us">demo</a>.-->
+              <!--Use the following link to try the <a href="https://sprinter.jlpc.ns01.us">demo</a>.-->
             </p>
           </div>
         </div>
@@ -773,7 +805,7 @@
               
               <b>Infrastructure stack:</b> Originally hosted in Azure IaaS. Now is part of a Jenkins CI/CD pipeline that builds a docker image and deploys it to a Kubernetes cluster hosted in Raspberry Pi devices.<br><br>
               
-              <!--Use the following URL to view the <a href="https://estoy-bien.jlpc.dns1.us">demo</a>.-->
+              <!--Use the following URL to view the <a href="https://estoy-bien.jlpc.ns01.us">demo</a>.-->
             </p>
           </div>
         </div>
@@ -887,7 +919,7 @@
               <b>Development stack:</b> PHP (5), JavaScript, MySQL, HTML, CSS, and the Bootstrap 3.7 framework.<br><br>
               
               <div class="card text-white bg-info mb-3" style="max-width: 40rem;">
-                <div class="card-header">Use the following credentials to experiment all the <a href="https://donations-desk.jlpc.dns1.us">demo</a> features:</div>
+                <div class="card-header">Use the following credentials to experiment all the <a href="https://donations-desk.jlpc.ns01.us">demo</a> features:</div>
                 <div class="card-body">
                   <table class="table">
                     <head>
@@ -1313,6 +1345,9 @@
         break;
       case 'Python':
         image.src = 'images/python3.png';
+        break;
+      case 'Go':
+        image.src = 'images/go.png';
         break;
       default:
         image.src = 'images/all.png';
