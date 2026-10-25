@@ -1,27 +1,38 @@
-// Start the Pipeline
 pipeline {
-  // Define the agent where it will run
   agent {
-    // kubernetes = kubernetes cloud in Jenkins
-    kubernetes { 
-// Define the pod template, what will the pods be, and resources for them
-// Pass the 'dockercred' (stored in Kubernetes) as the secret that Kaniko needs to push to Docker Hub
-yaml '''
+    kubernetes {
+      yaml '''
+apiVersion: v1
 kind: Pod
+metadata:
+  annotations:
+    container.apparmor.security.beta.kubernetes.io/buildkit: unconfined
 spec:
   containers:
-  - name: kaniko
-    image: gcr.io/kaniko-project/executor:debug
+  - name: buildkit
+    image: moby/buildkit:rootless
     command:
-    - sleep
+    - sh
+    - -c
     args:
-    - 1d
+    - sleep 1d
+    env:
+    - name: DOCKER_CONFIG
+      value: /docker-config
+    - name: BUILDKITD_FLAGS
+      value: --oci-worker-no-process-sandbox
+    securityContext:
+      runAsUser: 1000
+      runAsGroup: 1000
+      seccompProfile:
+        type: Unconfined
     volumeMounts:
-    - name: kaniko-secret
-      mountPath: /kaniko/.docker
+    - name: docker-config
+      mountPath: /docker-config
+      readOnly: true
   restartPolicy: Never
   volumes:
-  - name: kaniko-secret
+  - name: docker-config
     projected:
       sources:
       - secret:
@@ -32,32 +43,38 @@ spec:
 '''
     }
   }
-// Start declaring the stages of the pipeline
-  stages { 
-    // Stage #1 - Clone the repository
-    stage('Clone Repository to Kaniko') {
+
+  stages {
+    stage('Clone Repository') {
       steps {
-        container('kaniko') {
-          git url: 'https://github.com/PREngineer/prengineer.github.io', branch: 'master'
+        container('buildkit') {
+          git url: 'https://github.com/PREngineer/prengineer.github.io',
+              branch: 'master'
         }
       }
     }
-    // Stage #2 - Build the Docker image using Kaniko and push to registry
-    stage('Build and Push Docker Image to Registry') {
+
+    stage('Build and Push Multi-Architecture Image') {
       steps {
-        container('kaniko') {
+        container('buildkit') {
           sh '''
-            /kaniko/executor --context "`pwd`" --destination prengineer/cvjp:latest
+            buildctl-daemonless.sh build \
+              --frontend dockerfile.v0 \
+              --local context=. \
+              --local dockerfile=. \
+              --opt platform=linux/amd64,linux/arm64 \
+              --output type=image,name=docker.io/prengineer/cvjp:latest,push=true
           '''
         }
       }
     }
-    // Stage #3 - Remove previous pods
-    stage('Delete previous pods for redeployment by ArgoCD') {
+
+    stage('Delete Previous Pods for ArgoCD Redeployment') {
       steps {
         sshagent(credentials: ['k3s']) {
           sh '''
-            ssh -o StrictHostKeyChecking=no -l jlpc pi1 kubectl delete pods --all --namespace=cvjp
+            ssh -o StrictHostKeyChecking=no -l jlpc k3s \
+              kubectl delete pods --all --namespace=cvjp
           '''
         }
       }
